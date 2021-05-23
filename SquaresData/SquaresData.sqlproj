@@ -62,4 +62,13 @@
     <Folder Include="dbo\Tables" />
     <Folder Include="dbo\Views" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Stored Procedures\spGetHighScores.sql" />
+    <Build Include="dbo\Tables\HighScores.sql" />
+    <Build Include="dbo\Stored Procedures\spInsertHighScore.sql" />
+    <Build Include="dbo\Stored Procedures\spUpdateHighScore.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Publish Locations\SquaresData.publish.xml" />
+  </ItemGroup>
 </Project>
