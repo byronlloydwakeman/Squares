@@ -81,9 +81,21 @@
     <Compile Include="API\Endpoints\IHighScoreEndpoint.cs" />
     <Compile Include="API\IAPIHelper.cs" />
     <Compile Include="AutoFac\ContainerConfig.cs" />
+    <Compile Include="GameLogic\GameThread.cs" />
+    <Compile Include="GameLogic\GoLogic\GoLogic.cs" />
+    <Compile Include="GameLogic\GoLogic\IGoLogic.cs" />
+    <Compile Include="GameLogic\HighScoreLogic\HighScoreLogic.cs" />
+    <Compile Include="GameLogic\HighScoreLogic\IHighScoreLogic.cs" />
+    <Compile Include="GameLogic\IGameThread.cs" />
+    <Compile Include="GameLogic\WinnerLogic\IWinnerLogic.cs" />
+    <Compile Include="GameLogic\WinnerLogic\WinnerLogic.cs" />
     <Compile Include="Models\AuthenticatedUser.cs" />
+    <Compile Include="Models\GameModels\BoardModel.cs" />
+    <Compile Include="Models\GameModels\PointModel.cs" />
     <Compile Include="Models\HighScoreUIModel.cs" />
     <Compile Include="Models\IAuthenticatedUser.cs" />
+    <Compile Include="Models\GameModels\LineModel.cs" />
+    <Compile Include="Models\GameModels\PlayerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
