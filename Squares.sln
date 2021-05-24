@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquaresDataManager", "Squar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquaresDataManager.Library", "SquaresDataManager.Library\SquaresDataManager.Library.csproj", "{6EC73274-527C-4DA8-888D-F0B0CC271804}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquaresUI.Library", "SquaresUI.Library\SquaresUI.Library.csproj", "{D401F00E-24C4-4974-9DDD-0650B228E4F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{6EC73274-527C-4DA8-888D-F0B0CC271804}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EC73274-527C-4DA8-888D-F0B0CC271804}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EC73274-527C-4DA8-888D-F0B0CC271804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D401F00E-24C4-4974-9DDD-0650B228E4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D401F00E-24C4-4974-9DDD-0650B228E4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D401F00E-24C4-4974-9DDD-0650B228E4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D401F00E-24C4-4974-9DDD-0650B228E4F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

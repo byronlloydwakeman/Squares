@@ -15,7 +15,7 @@ namespace SquaresDataManager.Library.DataAccess
             return SqlDataAccess.LoadData<HighScoreDBModel, dynamic>("spGetHighScores", new { });
         }
 
-        //Insertion works
+        //Insertion works, Updating records works
         public static void InsertHighScore(HighScoreDBModel highScoreDBModel)
         {
             string LoggedInUser = highScoreDBModel.LoggedInUser;
