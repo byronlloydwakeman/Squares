@@ -8,8 +8,13 @@ namespace SquaresUI.Library.Models.GameModels
 {
     public class LineModel
     {
-        public int Point1 { get; set; }
-        public int Point2 { get; set; }
+        public PointModel Point1 { get; set; }
+        public PointModel Point2 { get; set; }
         public bool IsActivated { get; set; }
+
+        public override string ToString()
+        {
+            return $"({Point1.XCoord},{Point1.YCoord}), ({Point2.XCoord},{Point2.YCoord}) Activated : {IsActivated}";
+        }
     }
 }

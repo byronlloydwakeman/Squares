@@ -7,5 +7,7 @@ namespace SquaresUI.Library.GameLogic.WinnerLogic
         PlayerModel FindWinner();
         bool HasWon();
         void InsertPlayerModels(PlayerModel player1, PlayerModel player2);
+        void AddPoint();
+        void InsertMaxScore(int maxScore);
     }
 }

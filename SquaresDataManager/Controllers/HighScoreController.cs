@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Microsoft.AspNet.Identity;
 
 namespace SquaresDataManager.Controllers
 {
@@ -22,6 +23,7 @@ namespace SquaresDataManager.Controllers
         [Route("PostHighScore")]
         public void PostHighScore(HighScoreDBModel highScoreDBModel)
         {
+            highScoreDBModel.LoggedInUser = RequestContext.Principal.Identity.Name;
             HighScoreData.InsertHighScore(highScoreDBModel);
         }
 

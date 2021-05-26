@@ -6,6 +6,7 @@ using SquaresUI.Library.GameLogic.GoLogic;
 using SquaresUI.Library.GameLogic.HighScoreLogic;
 using SquaresUI.Library.GameLogic.WinnerLogic;
 using SquaresUI.Library.Models;
+using SquaresUI.Library.Models.GameModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace SquaresUI.Library.AutoFac
             builder.RegisterType<HighScoreLogic>().As<IHighScoreLogic>();
             builder.RegisterType<WinnerLogic>().As<IWinnerLogic>().SingleInstance();
             builder.RegisterType<GameThread>().As<IGameThread>();
+            builder.RegisterType<BoardModel>().As<IBoardModel>().SingleInstance();
 
             return builder.Build();
         }

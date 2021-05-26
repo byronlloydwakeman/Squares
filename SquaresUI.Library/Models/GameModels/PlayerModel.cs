@@ -11,5 +11,10 @@ namespace SquaresUI.Library.Models.GameModels
         public string UserName { get; set; }
         public bool IsGo { get; set; }
         public int Score { get; set; }
+
+        public override string ToString()
+        {
+            return $"Username = {UserName}, IsGo : {IsGo}, Score : {Score}";
+        }
     }
 }

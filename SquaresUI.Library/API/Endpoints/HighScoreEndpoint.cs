@@ -42,6 +42,7 @@ namespace SquaresUI.Library.API.Endpoints
 
         public async Task PostHighScore(HighScoreUIModel highScoreUIModel)
         {
+           
             _apiHelper._apiClient.DefaultRequestHeaders.Clear();
             _apiHelper._apiClient.DefaultRequestHeaders.Accept.Clear();
             _apiHelper._apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

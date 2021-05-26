@@ -1,4 +1,6 @@
-﻿using SquaresUI.Library.GameLogic.GoLogic;
+﻿using Autofac;
+using SquaresUI.Library.AutoFac;
+using SquaresUI.Library.GameLogic.GoLogic;
 using SquaresUI.Library.GameLogic.HighScoreLogic;
 using SquaresUI.Library.GameLogic.WinnerLogic;
 using SquaresUI.Library.Models.GameModels;
@@ -15,46 +17,65 @@ namespace SquaresUI.Library.GameLogic
         private IGoLogic _goLogic;
         private IHighScoreLogic _highScoreLogic;
         private IWinnerLogic _winnerLogic;
+        private IBoardModel _boardModel;
+        private PlayerModel _player1;
+        private PlayerModel _player2;
 
-        public GameThread(PlayerModel player1, PlayerModel player2, IGoLogic goLogic, IHighScoreLogic highScoreLogic, IWinnerLogic winnerLogic)
+        public GameThread(IGoLogic goLogic, IHighScoreLogic highScoreLogic, IWinnerLogic winnerLogic, IBoardModel boardModel)
         {
             _goLogic = goLogic;
             _highScoreLogic = highScoreLogic;
             _winnerLogic = winnerLogic;
-            _winnerLogic.InsertPlayerModels(player1, player2);
+            _boardModel = boardModel;
 
             //Initializes board when an instance of the the class is made (the game has started)
             InitializeBoard();
         }
 
-        private void InitializeBoard()
+        public async Task InsertLogin(string username, string password)
         {
-            //Adds the lines to the lists in board model
-            BoardModel board = new BoardModel();
-            //Add instance to go logic
-            _goLogic.InsertBoardModel(board);
+            await _highScoreLogic.Login(username, password);
         }
 
+        public void InsertPlayerModels(PlayerModel player1, PlayerModel player2)
+        {
+            _player1 = player1;
+            _player2 = player2;
+            _winnerLogic.InsertPlayerModels(player1, player2);
+            _goLogic.InsertPlayerModel(player1, player2);
+        }
 
-        public void Move(PointModel p1, PointModel p2)
+        private void InitializeBoard()
+        {
+            //Add instance to go logic
+            _goLogic.InsertBoardModel(_boardModel);
+            _winnerLogic.InsertMaxScore(_boardModel.Squares.Count);
+        }
+
+        public async Task Move(PointModel p1, PointModel p2)
         {
             //Find line in array and activate
             _goLogic.ActivateLine(p1, p2);
 
+            ShowBoard();
+            ShowPlayers();
+
             //Check whether square has been made
             bool hasSquareBeenMade = _goLogic.HasSquareBeenMade();
 
-            //Check whether a sqaure has been made
+            //If a square has been made
             if (hasSquareBeenMade)
             {
                 //Add score onto whoevers go it is
+                _winnerLogic.AddPoint();
 
                 //Check if the game has been won
                 if (_winnerLogic.HasWon())
                 {
                     //If won find who the winner is and set highscores if needed
                     PlayerModel winner = _winnerLogic.FindWinner();
-                    if (_highScoreLogic.IsNewHighScore(winner))
+                    bool newHigh = await _highScoreLogic.IsNewHighScore(winner);
+                    if(newHigh)
                     {
                         _highScoreLogic.AddNewHighScore(winner);
                     }
@@ -64,7 +85,35 @@ namespace SquaresUI.Library.GameLogic
             {
                 _goLogic.SwitchGoes();
             }
+
+            ShowPlayers();
         }
+
+        public void ShowPlayers()
+        {
+            Console.WriteLine(_player1);
+            Console.WriteLine(_player2);
+        }
+
+        public void ShowBoard()
+        {
+            Console.WriteLine("Lines : ");
+            foreach (var item in _boardModel.Lines)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("Squares : ");
+            for (int i = 0; i < _boardModel.Squares.Count; i++)
+            {
+                Console.WriteLine($"Square {i + 1}");
+                for (int j = 0; j < _boardModel.Squares[i].Count; j++)
+                {
+                    Console.WriteLine(_boardModel.Squares[i][j]);
+                }
+            }
+        }
+
 
     }
 }
