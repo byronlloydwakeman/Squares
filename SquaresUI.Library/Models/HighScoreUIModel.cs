@@ -13,5 +13,10 @@ namespace SquaresUI.Library.Models
         public int BoardSize { get; set; }
         public DateTime Date { get; set; }
         public int HighScore { get; set; }
+
+        public override string ToString()
+        {
+            return $"LoggedInUser : {LoggedInUser}, UserName : {UserName}, BoardSize : {BoardSize}, Date : {Date}, HighScore : {HighScore}";
+        }
     }
 }

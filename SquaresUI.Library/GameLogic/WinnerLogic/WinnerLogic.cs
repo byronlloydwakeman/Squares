@@ -27,15 +27,15 @@ namespace SquaresUI.Library.GameLogic.WinnerLogic
         /// <summary>
         /// Finds whos go it is and adds a point to their score
         /// </summary>
-        public void AddPoint()
+        public void AddPoint(int point)
         {
             if (_player1.IsGo)
             {
-                _player1.Score += 1;
+                _player1.Score += point;
             }
             else
             {
-                _player2.Score += 1;
+                _player2.Score += point;
             }
         }
 

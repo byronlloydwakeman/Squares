@@ -15,7 +15,7 @@ namespace SquaresUI.Library.Models.GameModels
         public BoardModel()
         {
             int height = 2;
-            int width = 2;
+            int width = 3;
             //Create points to create lines from and add them to the lines
             for (int y = 0; y < height; y++)
             {

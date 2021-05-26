@@ -50,9 +50,13 @@ namespace SquaresUI.Library.GameLogic
             //Add instance to go logic
             _goLogic.InsertBoardModel(_boardModel);
             _winnerLogic.InsertMaxScore(_boardModel.Squares.Count);
+            _highScoreLogic.InsertBoardSize(_boardModel.Squares.Count);
         }
 
-        public async Task Move(PointModel p1, PointModel p2)
+        /// <summary>
+        /// Method to call to perform a move, returns true if the game has ended false if not
+        /// </summary>
+        public async Task<bool> Move(PointModel p1, PointModel p2)
         {
             //Find line in array and activate
             _goLogic.ActivateLine(p1, p2);
@@ -61,13 +65,14 @@ namespace SquaresUI.Library.GameLogic
             ShowPlayers();
 
             //Check whether square has been made
-            bool hasSquareBeenMade = _goLogic.HasSquareBeenMade();
+            int SquaresMade = _goLogic.HasSquareBeenMade();
 
             //If a square has been made
-            if (hasSquareBeenMade)
+            if (SquaresMade > 0)
             {
+                Console.WriteLine("Square has been made");
                 //Add score onto whoevers go it is
-                _winnerLogic.AddPoint();
+                _winnerLogic.AddPoint(SquaresMade);
 
                 //Check if the game has been won
                 if (_winnerLogic.HasWon())
@@ -79,14 +84,16 @@ namespace SquaresUI.Library.GameLogic
                     {
                         _highScoreLogic.AddNewHighScore(winner);
                     }
+                    return true;
                 }
+                
             }
             else //If not switch goes and carry on playing
             {
                 _goLogic.SwitchGoes();
             }
 
-            ShowPlayers();
+            return false;
         }
 
         public void ShowPlayers()

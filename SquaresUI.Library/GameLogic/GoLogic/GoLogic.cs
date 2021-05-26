@@ -41,8 +41,9 @@ namespace SquaresUI.Library.GameLogic.GoLogic
         /// <summary>
         /// Checks whether a square has been made if so returns true, false if not
         /// </summary>
-        public bool HasSquareBeenMade()
+        public int HasSquareBeenMade()
         {
+            int squareCount = 0;
             for (int i = 0; i < _boardModel.Squares.Count; i++)
             {
                 bool isSquareActivated = true;
@@ -55,11 +56,11 @@ namespace SquaresUI.Library.GameLogic.GoLogic
                 }
                 if (isSquareActivated)
                 {
-                    return true;
+                    squareCount++;
                 }
             }
 
-            return false;
+            return squareCount;
         }
 
         /// <summary>

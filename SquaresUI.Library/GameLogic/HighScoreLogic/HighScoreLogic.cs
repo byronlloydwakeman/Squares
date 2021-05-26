@@ -17,10 +17,16 @@ namespace SquaresUI.Library.GameLogic.HighScoreLogic
     {
         private IAPIHelper _apiHelper;
         private IHighScoreEndpoint _highscoreEndpoint;
+        private int _boardSize;
         public HighScoreLogic(IAPIHelper apiHelper, IHighScoreEndpoint highScoreEndpoint)
         {
             _apiHelper = apiHelper;
             _highscoreEndpoint = highScoreEndpoint;
+        }
+
+        public void InsertBoardSize(int boardSize)
+        {
+            _boardSize = boardSize;
         }
 
         public async Task Login(string username, string password)
@@ -42,7 +48,7 @@ namespace SquaresUI.Library.GameLogic.HighScoreLogic
                 {
                     exist = true;
                 }
-                if ((item.UserName == player.UserName) && (item.HighScore > player.Score))
+                if ((item.UserName == player.UserName) && (item.HighScore < player.Score))
                 {
                     return true;
                 }
@@ -66,7 +72,7 @@ namespace SquaresUI.Library.GameLogic.HighScoreLogic
         public void AddNewHighScore(PlayerModel player)
         {
             //Note board size is hard coded
-            _highscoreEndpoint.PostHighScore(new HighScoreUIModel() { UserName = player.UserName, Date = DateTime.Now, BoardSize = 1, HighScore = player.Score});
+            _highscoreEndpoint.PostHighScore(new HighScoreUIModel() { UserName = player.UserName, Date = DateTime.Now, BoardSize = _boardSize, HighScore = player.Score});
         }
     }
 }

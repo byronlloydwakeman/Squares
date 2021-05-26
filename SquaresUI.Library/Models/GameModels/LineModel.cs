@@ -14,7 +14,7 @@ namespace SquaresUI.Library.Models.GameModels
 
         public override string ToString()
         {
-            return $"({Point1.XCoord},{Point1.YCoord}), ({Point2.XCoord},{Point2.YCoord}) Activated : {IsActivated}";
+            return $"({Point1.XCoord},{Point1.YCoord}), ({Point2.XCoord},{Point2.YCoord}) IsActivate : {IsActivated}";
         }
     }
 }
