@@ -5,6 +5,271 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SquaresDesktopUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+        Title="MainWindow" Height="500" Width="500">
+    <Grid>
+        <Button HorizontalAlignment="Left" Height="10" Margin="18,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579"/>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="88,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579"/>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="32,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="122,53,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform X="-35.886" Y="34.208"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="68,53,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="52,53,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform X="-35.886" Y="34.208"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="-2,53,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="32,88,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+        <Button HorizontalAlignment="Left" Height="10" Margin="88,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579"/>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="158,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579"/>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="102,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="192,53,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform X="-35.886" Y="34.208"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="138,53,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="122,53,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform X="-35.886" Y="34.208"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="68,53,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="102,88,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+        <Button HorizontalAlignment="Left" Height="10" Margin="159,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579"/>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="229,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579"/>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="173,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="263,53,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform X="-35.886" Y="34.208"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="209,53,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="193,53,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform X="-35.886" Y="34.208"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="139,53,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="173,88,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+        <Button HorizontalAlignment="Left" Height="10" Margin="229,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579"/>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="299,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579"/>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="243,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="333,53,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform X="-35.886" Y="34.208"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="279,53,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="263,53,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform X="-35.886" Y="34.208"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="209,53,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="243,88,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+        <Button HorizontalAlignment="Left" Height="10" Margin="299,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579"/>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="369,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579"/>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="313,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="403,53,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform X="-35.886" Y="34.208"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="349,53,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="333,53,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform X="-35.886" Y="34.208"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="279,53,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="313,88,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+        <Button HorizontalAlignment="Left" Height="10" Margin="371,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579"/>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="441,18,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579"/>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="385,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="475,53,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform X="-35.886" Y="34.208"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="421,53,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button Content="" HorizontalAlignment="Left" Height="10" Margin="405,53,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.579">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform X="-35.886" Y="34.208"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="351,53,0,0" Stroke="Black" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.156"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="10" Margin="385,88,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+    </Grid>
 </Window>

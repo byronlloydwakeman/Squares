@@ -76,6 +76,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SquaresExceptions\SquaresExceptions.csproj">
+      <Project>{558D6D65-B8CB-4861-8553-5C7D64296925}</Project>
+      <Name>SquaresExceptions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SquaresUI.Library\SquaresUI.Library.csproj">
       <Project>{D401F00E-24C4-4974-9DDD-0650B228E4F5}</Project>
       <Name>SquaresUI.Library</Name>

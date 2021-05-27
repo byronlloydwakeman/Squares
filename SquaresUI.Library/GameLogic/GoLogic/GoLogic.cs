@@ -13,7 +13,7 @@ namespace SquaresUI.Library.GameLogic.GoLogic
         private PlayerModel _player1;
         private PlayerModel _player2;
 
-        public void InsertBoardModel(IBoardModel boardModel)
+        public GoLogic(IBoardModel boardModel)
         {
             _boardModel = boardModel;
         }
@@ -60,7 +60,8 @@ namespace SquaresUI.Library.GameLogic.GoLogic
                 }
             }
 
-            return squareCount;
+            //Taking away the score so we dont re count squares
+            return squareCount - _player1.Score - _player2.Score;
         }
 
         /// <summary>

@@ -99,8 +99,15 @@
     <Compile Include="Models\GameModels\LineModel.cs" />
     <Compile Include="Models\GameModels\PlayerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\LineValidation\ILineValidation.cs" />
+    <Compile Include="Validation\LineValidation\LineValidation.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SquaresExceptions\SquaresExceptions.csproj">
+      <Project>{558D6D65-B8CB-4861-8553-5C7D64296925}</Project>
+      <Name>SquaresExceptions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />

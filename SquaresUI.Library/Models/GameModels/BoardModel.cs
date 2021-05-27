@@ -8,14 +8,14 @@ namespace SquaresUI.Library.Models.GameModels
 {
     public class BoardModel : IBoardModel
     {
+        public int height { get; } = 2;
+        public int width { get; } = 3;
         private List<PointModel> Points { get; set; } = new List<PointModel>();
         public List<LineModel> Lines { get; set; } = new List<LineModel>();
         public List<List<LineModel>> Squares { get; set; } = new List<List<LineModel>>();
 
         public BoardModel()
         {
-            int height = 2;
-            int width = 3;
             //Create points to create lines from and add them to the lines
             for (int y = 0; y < height; y++)
             {

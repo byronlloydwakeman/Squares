@@ -1,9 +1,12 @@
 ﻿using Autofac;
+using SquaresExceptions;
 using SquaresUI.Library.AutoFac;
 using SquaresUI.Library.GameLogic.GoLogic;
 using SquaresUI.Library.GameLogic.HighScoreLogic;
 using SquaresUI.Library.GameLogic.WinnerLogic;
 using SquaresUI.Library.Models.GameModels;
+using SquaresUI.Library.Validation;
+using SquaresUI.Library.Validation.LineValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,16 +21,18 @@ namespace SquaresUI.Library.GameLogic
         private IHighScoreLogic _highScoreLogic;
         private IWinnerLogic _winnerLogic;
         private IBoardModel _boardModel;
+        private ILineValidation _lineValidation;
+        //Note the player models aren't needed theyre just being used to show the state of the players
         private PlayerModel _player1;
         private PlayerModel _player2;
 
-        public GameThread(IGoLogic goLogic, IHighScoreLogic highScoreLogic, IWinnerLogic winnerLogic, IBoardModel boardModel)
+        public GameThread(IGoLogic goLogic, IHighScoreLogic highScoreLogic, IWinnerLogic winnerLogic, IBoardModel boardModel, ILineValidation lineValidation)
         {
             _goLogic = goLogic;
             _highScoreLogic = highScoreLogic;
             _winnerLogic = winnerLogic;
             _boardModel = boardModel;
-
+            _lineValidation = lineValidation;
             //Initializes board when an instance of the the class is made (the game has started)
             InitializeBoard();
         }
@@ -47,8 +52,6 @@ namespace SquaresUI.Library.GameLogic
 
         private void InitializeBoard()
         {
-            //Add instance to go logic
-            _goLogic.InsertBoardModel(_boardModel);
             _winnerLogic.InsertMaxScore(_boardModel.Squares.Count);
             _highScoreLogic.InsertBoardSize(_boardModel.Squares.Count);
         }
@@ -61,6 +64,18 @@ namespace SquaresUI.Library.GameLogic
             //Find line in array and activate
             _goLogic.ActivateLine(p1, p2);
 
+            //Check input points are valid
+            if (!_lineValidation.DoesLineExist(p1, p2))
+            {
+                throw new InvalidLineException(p1.XCoord, p1.YCoord, p2.XCoord, p2.YCoord);
+            }
+
+            //Check the line hasnt already been activated
+            if (_lineValidation.HasLineBeenPlaced(p1, p2))
+            {
+                throw new LineActivatedException(p1.XCoord, p1.YCoord, p2.XCoord, p2.YCoord);
+            }
+            
             ShowBoard();
             ShowPlayers();
 
