@@ -8,8 +8,8 @@ namespace SquaresUI.Library.Models.GameModels
 {
     public class BoardModel : IBoardModel
     {
-        public int height { get; } = 2;
-        public int width { get; } = 3;
+        public int height { get; } = 9;
+        public int width { get; } = 9;
         private List<PointModel> Points { get; set; } = new List<PointModel>();
         public List<LineModel> Lines { get; set; } = new List<LineModel>();
         public List<List<LineModel>> Squares { get; set; } = new List<List<LineModel>>();
@@ -57,11 +57,18 @@ namespace SquaresUI.Library.Models.GameModels
             }
 
             //Add column lines
+            int corrector = 0;
             for (int i = 0; i < Squares.Count; i++)
             {
-                Squares[i].Add(Lines[i + width + Squares.Count]);
-                Squares[i].Add(Lines[i + width - 1 + Squares.Count]);
-            }
+                if ((i % 8 == 0) && (i != 0))
+                {
+                    corrector++;
+                }
+                
+                Squares[i].Add(Lines[i + corrector + width + Squares.Count]);
+                Squares[i].Add(Lines[i + width - 1 + corrector + Squares.Count]);
+
+            } //I whtink it now works
         }
     }
 }

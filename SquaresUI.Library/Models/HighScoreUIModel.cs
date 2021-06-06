@@ -16,7 +16,7 @@ namespace SquaresUI.Library.Models
 
         public override string ToString()
         {
-            return $"LoggedInUser : {LoggedInUser}, UserName : {UserName}, BoardSize : {BoardSize}, Date : {Date}, HighScore : {HighScore}";
+            return $"LoggedInUser : {LoggedInUser}, UserName : {UserName}, BoardSize : {BoardSize}\nDate : {Date}, HighScore : {HighScore}";
         }
     }
 }

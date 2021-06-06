@@ -1,4 +1,6 @@
-﻿using SquaresUI.Library.Models.GameModels;
+﻿using SquaresUI.Library.Models;
+using SquaresUI.Library.Models.GameModels;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SquaresUI.Library.GameLogic.HighScoreLogic
@@ -9,5 +11,9 @@ namespace SquaresUI.Library.GameLogic.HighScoreLogic
         Task Login(string username, string password);
         Task<bool> IsNewHighScore(PlayerModel player);
         void InsertBoardSize(int boardSize);
+        Task<List<HighScoreUIModel>> ReturnHighscoresByOldest();
+        Task<List<HighScoreUIModel>> ReturnHighscoresByNewest();
+        Task<List<HighScoreUIModel>> ReturnHighscoresByAlpha();
+        Task<List<HighScoreUIModel>> ReturnHighscoreByScore();
     }
 }

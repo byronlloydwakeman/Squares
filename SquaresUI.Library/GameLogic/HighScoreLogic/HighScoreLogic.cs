@@ -29,6 +29,7 @@ namespace SquaresUI.Library.GameLogic.HighScoreLogic
             _boardSize = boardSize;
         }
 
+        //Called by GameThread, when we login _apiHelper has a authenticatedModel field which saves the name and access token, so we dont have to keep manually logging in
         public async Task Login(string username, string password)
         {
             await _apiHelper.Login(username, password);
@@ -73,6 +74,80 @@ namespace SquaresUI.Library.GameLogic.HighScoreLogic
         {
             //Note board size is hard coded
             _highscoreEndpoint.PostHighScore(new HighScoreUIModel() { UserName = player.UserName, Date = DateTime.Now, BoardSize = _boardSize, HighScore = player.Score});
+        }
+
+        public async Task<List<HighScoreUIModel>> ReturnHighscoresByNewest()
+        {
+            List<HighScoreUIModel> temp = await _highscoreEndpoint.GetHighScores();
+            temp.Reverse(); //So its ordered from most recent to oldest
+            return temp;
+        }
+
+        public async Task<List<HighScoreUIModel>> ReturnHighscoresByOldest()
+        {
+            List<HighScoreUIModel> temp = await _highscoreEndpoint.GetHighScores();
+            return temp;
+        }
+
+        public async Task<List<HighScoreUIModel>> ReturnHighscoresByAlpha()
+        {
+            List<HighScoreUIModel> temp = new List<HighScoreUIModel>();
+            List<HighScoreUIModel> highscores = await _highscoreEndpoint.GetHighScores();
+
+            //Get the names of all the highscores into a list, sort it and then rearrange the original list respectively
+
+            List<string> names = new List<string>();
+
+            foreach (var score in highscores)
+            {
+                names.Add(score.UserName);
+            }
+
+            names.Sort();
+
+            //Loop through the new list, when we find the name in the highscores list add it to the temp list
+            for (int i = 0; i < names.Count; i++)
+            {
+                foreach (var score in highscores) //Find the highscore with the given name
+                {
+                    if (score.UserName == names[i])
+                    {
+                        temp.Add(score); //As the names are sorted, this means when we add them the highscores should also be sorted
+                    }
+                }
+            }
+
+            return temp;
+        }
+
+        public async Task<List<HighScoreUIModel>> ReturnHighscoreByScore()
+        {
+            List<HighScoreUIModel> temp = new List<HighScoreUIModel>();
+            List<HighScoreUIModel> highscores = await _highscoreEndpoint.GetHighScores();
+
+            List<int> scoreList = new List<int>();
+
+            foreach (var item in highscores)
+            {
+                scoreList.Add(item.HighScore);   
+            }
+
+            scoreList.Sort();
+
+            for (int i = 0; i < scoreList.Count; i++)
+            {
+                foreach (var item in highscores)
+                {
+                    if (item.HighScore == scoreList[i])
+                    {
+                        temp.Add(item);
+                    }
+                }
+            }
+
+            temp.Reverse(); //So the start of the list is highest not lowest
+            return temp;
+
         }
     }
 }

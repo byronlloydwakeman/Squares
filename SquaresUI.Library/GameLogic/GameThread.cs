@@ -4,6 +4,7 @@ using SquaresUI.Library.AutoFac;
 using SquaresUI.Library.GameLogic.GoLogic;
 using SquaresUI.Library.GameLogic.HighScoreLogic;
 using SquaresUI.Library.GameLogic.WinnerLogic;
+using SquaresUI.Library.Models;
 using SquaresUI.Library.Models.GameModels;
 using SquaresUI.Library.Validation;
 using SquaresUI.Library.Validation.LineValidation;
@@ -61,8 +62,6 @@ namespace SquaresUI.Library.GameLogic
         /// </summary>
         public async Task<bool> Move(PointModel p1, PointModel p2)
         {
-            //Find line in array and activate
-            _goLogic.ActivateLine(p1, p2);
 
             //Check input points are valid
             if (!_lineValidation.DoesLineExist(p1, p2))
@@ -75,9 +74,9 @@ namespace SquaresUI.Library.GameLogic
             {
                 throw new LineActivatedException(p1.XCoord, p1.YCoord, p2.XCoord, p2.YCoord);
             }
-            
-            ShowBoard();
-            ShowPlayers();
+
+            //Find line in array and activate
+            _goLogic.ActivateLine(p1, p2);
 
             //Check whether square has been made
             int SquaresMade = _goLogic.HasSquareBeenMade();
@@ -95,13 +94,12 @@ namespace SquaresUI.Library.GameLogic
                     //If won find who the winner is and set highscores if needed
                     PlayerModel winner = _winnerLogic.FindWinner();
                     bool newHigh = await _highScoreLogic.IsNewHighScore(winner);
-                    if(newHigh)
+                    if (newHigh)
                     {
                         _highScoreLogic.AddNewHighScore(winner);
                     }
                     return true;
                 }
-                
             }
             else //If not switch goes and carry on playing
             {
@@ -111,31 +109,20 @@ namespace SquaresUI.Library.GameLogic
             return false;
         }
 
-        public void ShowPlayers()
+        public int ReturnPlayer1Score()
         {
-            Console.WriteLine(_player1);
-            Console.WriteLine(_player2);
+            return _player1.Score;
         }
 
-        public void ShowBoard()
+        public int ReturnPlayer2Score()
         {
-            Console.WriteLine("Lines : ");
-            foreach (var item in _boardModel.Lines)
-            {
-                Console.WriteLine(item);
-            }
-
-            Console.WriteLine("Squares : ");
-            for (int i = 0; i < _boardModel.Squares.Count; i++)
-            {
-                Console.WriteLine($"Square {i + 1}");
-                for (int j = 0; j < _boardModel.Squares[i].Count; j++)
-                {
-                    Console.WriteLine(_boardModel.Squares[i][j]);
-                }
-            }
+            return _player2.Score;
         }
 
+        public bool IsPlayer1Go()
+        {
+            return _player1.IsGo;
+        }
 
     }
 }

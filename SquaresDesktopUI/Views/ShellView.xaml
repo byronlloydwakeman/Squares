@@ -1,0 +1,26 @@
+﻿<Window x:Class="SquaresDesktopUI.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SquaresDesktopUI.Views"
+        mc:Ignorable="d" Background="SlateGray" ResizeMode="CanResize"
+        Title="ShellView" Height="600" Width="560">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" FontSize="12">
+            <MenuItem Header="_Account">
+                <MenuItem x:Name="LoginScreen" Header="_Login"/>
+                <MenuItem x:Name="RegisterScreen" Header="_Register"/>
+            </MenuItem>
+            <MenuItem x:Name="HighscoresScreen" Header="_Highscores">
+                
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <ContentControl x:Name="ActiveItem" Margin="20 20 20 20" Width="510" Height="510"/>
+        </Grid>
+    </DockPanel>
+    
+</Window>
+
+    

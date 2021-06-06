@@ -35,6 +35,10 @@ namespace SquaresUI.Library.GameLogic.GoLogic
                 {
                     item.IsActivated = true;
                 }
+                else if ((item.Point1.XCoord == p2.XCoord) && (item.Point2.XCoord == p1.XCoord) && (item.Point1.YCoord == p2.YCoord) && (item.Point2.YCoord == p1.YCoord))
+                {
+                    item.IsActivated = true;
+                }
             }
         }
 
