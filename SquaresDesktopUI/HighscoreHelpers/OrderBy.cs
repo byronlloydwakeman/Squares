@@ -1,4 +1,7 @@
-﻿using SquaresUI.Library.GameLogic.HighScoreLogic;
+﻿using AutoMapper;
+using SquaresDesktopUI.Models;
+using SquaresUI.Library.GameLogic.HighScoreLogic;
+using SquaresUI.Library.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +12,11 @@ namespace SquaresDesktopUI.HighscoreHelpers
 {
     public class OrderBy : IOrderBy
     {
+        private IMapper _mapper;
         private IHighScoreLogic _highScoreLogic;
-        public OrderBy(IHighScoreLogic highScoreLogic)
+        public OrderBy(IHighScoreLogic highScoreLogic, IMapper mapper)
         {
+            _mapper = mapper;
             _highScoreLogic = highScoreLogic;
         }
 
@@ -19,7 +24,9 @@ namespace SquaresDesktopUI.HighscoreHelpers
         {
             List<string> temp = new List<string>();
 
-            foreach (var item in await _highScoreLogic.ReturnHighscoresByNewest())  //Convert model list to string list
+            var highscoreUIModelList = await _highScoreLogic.ReturnHighscoresByNewest();
+
+            foreach (var item in _mapper.Map<List<HighscoreDisplayModel>>(highscoreUIModelList))  //Convert model list to string list
             {
                 temp.Add(item.ToString());
             }
@@ -31,7 +38,9 @@ namespace SquaresDesktopUI.HighscoreHelpers
         {
             List<string> temp = new List<string>();
 
-            foreach (var item in await _highScoreLogic.ReturnHighscoresByOldest())  //Convert model list to string list
+            var highscoreUIModelList = await _highScoreLogic.ReturnHighscoresByOldest();
+
+            foreach (var item in _mapper.Map<List<HighscoreDisplayModel>>(highscoreUIModelList))  //Convert model list to string list
             {
                 temp.Add(item.ToString());
             }
@@ -43,7 +52,9 @@ namespace SquaresDesktopUI.HighscoreHelpers
         {
             List<string> temp = new List<string>();
 
-            foreach (var item in await _highScoreLogic.ReturnHighscoreByScore())
+            var highscoreUIModelList = await _highScoreLogic.ReturnHighscoreByScore();
+
+            foreach (var item in _mapper.Map<List<HighscoreDisplayModel>>(highscoreUIModelList))
             {
                 temp.Add(item.ToString());
             }
@@ -55,7 +66,9 @@ namespace SquaresDesktopUI.HighscoreHelpers
         {
             List<string> temp = new List<string>();
 
-            foreach (var item in await _highScoreLogic.ReturnHighscoresByAlpha())
+            var highscoreUIModelList = await _highScoreLogic.ReturnHighscoresByAlpha();
+
+            foreach (var item in _mapper.Map<List<HighscoreDisplayModel>>(highscoreUIModelList))
             {
                 temp.Add(item.ToString());
             }

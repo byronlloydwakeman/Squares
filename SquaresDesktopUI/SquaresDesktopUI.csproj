@@ -38,6 +38,9 @@
     <Reference Include="Autofac, Version=6.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.6.2.0\lib\netstandard2.0\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Caliburn.Micro.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.Core.4.0.173\lib\netstandard2.0\Caliburn.Micro.Core.dll</HintPath>
     </Reference>
@@ -108,6 +111,7 @@
     <Compile Include="EventModels\RegisterEvent.cs" />
     <Compile Include="HighscoreHelpers\IOrderBy.cs" />
     <Compile Include="HighscoreHelpers\OrderBy.cs" />
+    <Compile Include="Models\HighscoreDisplayModel.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\HighscoresViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
@@ -196,9 +200,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SquaresExceptions\SquaresExceptions.csproj">
       <Project>{558D6D65-B8CB-4861-8553-5C7D64296925}</Project>

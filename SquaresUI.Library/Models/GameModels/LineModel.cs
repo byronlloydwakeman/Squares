@@ -43,10 +43,5 @@ namespace SquaresUI.Library.Models.GameModels
                 return true;
             }
         }
-
-        public override string ToString()
-        {
-            return $"Rx{Point1.XCoord}y{Point1.YCoord}x{Point2.XCoord}y{Point2.YCoord}";
-        }
     }
 }

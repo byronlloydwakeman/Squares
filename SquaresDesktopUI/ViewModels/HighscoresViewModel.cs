@@ -65,20 +65,28 @@ namespace SquaresDesktopUI.ViewModels
         //When an item is selected
         public async Task ItemSelected()
         {
-            switch (SelectedItem)
+            try
             {
-                case "Score":
-                    Highscores = await _OrderBy.OrderByScore();
-                    break;
-                case "Newest":
-                    Highscores = await _OrderBy.OrderByNewest();
-                    break;
-                case "Oldest":
-                    Highscores = await _OrderBy.OrderByOldest();
-                    break;
-                case "Alphabetical":
-                    Highscores = await _OrderBy.OrderByAlpha();
-                    break;
+                switch (SelectedItem)
+                {
+                    case "Score":
+                        Highscores = await _OrderBy.OrderByScore();
+                        break;
+                    case "Newest":
+                        Highscores = await _OrderBy.OrderByNewest();
+                        break;
+                    case "Oldest":
+                        Highscores = await _OrderBy.OrderByOldest();
+                        break;
+                    case "Alphabetical":
+                        Highscores = await _OrderBy.OrderByAlpha();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                await TryCloseAsync();
             }
         }
     }

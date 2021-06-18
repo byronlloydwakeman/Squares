@@ -1,5 +1,7 @@
-﻿using Caliburn.Micro;
+﻿using AutoMapper;
+using Caliburn.Micro;
 using SquaresDesktopUI.HighscoreHelpers;
+using SquaresDesktopUI.Models;
 using SquaresDesktopUI.ViewModels;
 using SquaresUI.Library.API;
 using SquaresUI.Library.API.Endpoints;
@@ -29,6 +31,15 @@ namespace SquaresDesktopUI
 
         protected override void Configure()
         {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<HighScoreUIModel, HighscoreDisplayModel>();
+            });
+
+            var mapper = config.CreateMapper();
+
+            _container.Instance(mapper);
+
             _container.Instance(_container)
                 .PerRequest<IAPIHelper, APIHelper>()
                 .PerRequest<IHighScoreEndpoint, HighScoreEndpoint>()

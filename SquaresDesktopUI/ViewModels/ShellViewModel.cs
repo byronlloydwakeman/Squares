@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using SquaresDesktopUI.EventModels;
+using SquaresUI.Library.API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace SquaresDesktopUI.ViewModels
         private RegisterViewModel _registerViewModel;
         private HighscoresViewModel _highscoresViewModel;
         private IEventAggregator _eventAggregator;
+
         public ShellViewModel(HomeViewModel homeViewModel, GameViewModel gameViewModel, PlayerViewModel playerViewModel, 
             IEventAggregator eventAggregator, RegisterViewModel registerViewModel, HighscoresViewModel highscoresViewModel)
         {
